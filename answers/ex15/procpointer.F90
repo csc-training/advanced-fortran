@@ -1,0 +1,55 @@
+module points
+
+abstract interface
+  function intfun(x) result(y) ! write contents
+    integer, intent(in) :: x
+    integer :: y
+  end function
+end interface
+
+
+contains
+
+function map(f, x) result(y) ! write contents
+  procedure(intfun) :: f
+  integer, intent(in) :: x(:)
+  integer, allocatable :: y(:)
+  integer :: n
+  allocate(y(size(x,1)))
+
+  do n=lbound(y,1),ubound(y,1)
+    y(n) = f(x(n))
+  end do
+end function 
+
+function add_two(x) result(y)
+  integer, intent(in) :: x
+  integer :: y
+  y = x+2
+end function
+
+end module
+
+program procpoint
+use points
+implicit none
+
+procedure(intfun), pointer :: pptr
+integer, allocatable :: y(:)
+
+pptr => add_one
+y = map(pptr, [1,2,3,4])
+print *, 'map(add_one, [1,2,3,4]) =', y
+pptr => add_two
+y = map(pptr, [1,2,3,4])
+print *, 'map(add_two, [1,2,3,4]) =', y
+
+contains
+
+function add_one(x) result(y)
+  integer, intent(in) :: x
+  integer :: y
+  y = x+1
+end function
+
+end program
