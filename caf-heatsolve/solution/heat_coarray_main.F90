@@ -18,7 +18,7 @@ program heat_solve
   input%using_input_file = .false.
 
   ! Read in the command line arguments and
-  ! set up the needed variables 
+  ! set up the needed variables
   ! done at the Image #1 and then all images fetch the data from there
   if (this_image() == 1) then
      select case(command_argument_count())

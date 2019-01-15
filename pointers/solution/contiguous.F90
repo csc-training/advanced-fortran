@@ -10,7 +10,7 @@ program contiguous_attribute
 
   memory = 0
   Matrix (1:n, 1:n) => memory ! New feature
-  Diagonal => memory(::n+1) 
+  Diagonal => memory(::n+1)
   Diagonal = [ (-i, i=1,n) ]
 
   print *,'is_contiguous(memory)=',is_contiguous(memory)

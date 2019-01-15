@@ -1,7 +1,7 @@
 module memoize
 
   ! This type should function as a memoized sum of x and y
-  ! Add as restricting module and type access control as 
+  ! Add as restricting module and type access control as
   ! possible and fill missing parts
 
   type :: data_t
@@ -40,7 +40,7 @@ end module memoize
 program memoprog
   use memoize
   implicit none
-  
+
   type(data_t) :: foo
   integer :: val
 

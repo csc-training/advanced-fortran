@@ -3,7 +3,7 @@ module globalmod
   implicit none
 
   public
-  
+
   integer(c_short), bind(c) :: pixel(4,2) ! NB: index swap
   integer(c_int), bind(c) :: n
   type(c_ptr), bind(c, name='vector') :: c_vector
@@ -15,5 +15,5 @@ module globalmod
   end type pos_t
 
   type(pos_t), bind(c, name='position') :: position
-  
+
 end module globalmod

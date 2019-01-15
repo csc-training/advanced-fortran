@@ -45,7 +45,7 @@ contains
   subroutine initialize(field0)
     implicit none
 
-    type(field), intent(inout) :: field0[*] 
+    type(field), intent(inout) :: field0[*]
 
     real(dp) :: radius2
     integer :: i, j, ds2, nx_full, ny_full
@@ -81,7 +81,7 @@ contains
 
     field0%data(0,:) = 85.0_dp
     field0%data(field0%nx + 1,:) = 5.0_dp
-    
+
   end subroutine initialize
 
   ! Swap the data fields of two variables of type field
@@ -135,7 +135,7 @@ contains
     implicit none
     type(field), intent(inout) :: from_field[*]
     integer, save :: lb_x[*], lb_y[*], ub_x[*], ub_y[*] ! upper and lower boundary indices of the local arrays
-                                                        ! accessible by other images
+    ! accessible by other images
     integer :: me
 
     me = this_image()
@@ -206,7 +206,7 @@ contains
     full_data(1:curr%nx, 1:curr%ny) = curr%data(1:curr%nx, 1:curr%ny)
 
     write(filename,'(A5,I4.4,A1,I4.4,A4,A)')  'heat_', iter, '_', &
-          this_image(), '.png'
+         this_image(), '.png'
     stat = save_png(full_data, full_nx, full_ny, filename)
     deallocate(full_data)
   end subroutine output
@@ -237,7 +237,7 @@ contains
     integer, save :: nx[*], ny[*]
     integer :: i, im, ylow, yup
     character(len=2) :: dummy
- 
+
     real(kind=dp), dimension(:,:), allocatable :: full_grid
 
     ! i/o only from the first image
@@ -255,7 +255,7 @@ contains
     end if
     sync all
     ny = ny[1] / num_images()
-    nx = nx[1] 
+    nx = nx[1]
 
     call initialize_field_metadata(field0, nx, ny)
     ! The arrays for temperature field contain also a halo region

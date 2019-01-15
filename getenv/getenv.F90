@@ -6,7 +6,7 @@ program my_getenv
   interface
      !  char *getenv(const char *name);
      function mygetenv(name) bind(c,name='getenv')
-     ! TODO: add here the correct interface declaration
+       ! TODO: add here the correct interface declaration
      end function mygetenv
   end interface
 

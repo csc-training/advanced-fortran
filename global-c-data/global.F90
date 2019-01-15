@@ -3,7 +3,7 @@ program global
   use globalmod
   implicit none
 
-  interface 
+  interface
      ! void cinit()
      subroutine cinit () bind(c)
      end subroutine cinit
