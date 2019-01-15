@@ -3,20 +3,20 @@
 The heat equation is a partial differential equation that describes
 the variation of temperature in a given region over time
 
-<p align="center"><img src="images/heateqn_eq1.svg?invert_in_darkmode" align="middle" width="84pt" height="33.8pt"/></p>
+<p align="center"><img src="images/heateqn_eq1.svg" align="middle" width="84pt" height="33.8pt"/></p>
 	
 where u(x, y, z, t) represents temperature variation over space at a
 given time, and α is a thermal diffusivity constant.  We limit
 ourselves to two dimensions (plane) and discretize the equation onto a
 grid.  Then the Laplacian can be expressed as finite differences as
 
-<p align="center"><img src="images/heateqn_eq2.svg?invert_in_darkmode" align="middle" width="579pt" height="38.8pt"/></p>
+<p align="center"><img src="images/heateqn_eq2.svg" align="middle" width="579pt" height="38.8pt"/></p>
 
 Where ∆x and ∆y are the grid spacing of the temperature grid
 u(i,j). We can study the development of the temperature grid with
 explicit time evolution over time steps ∆t:
 
-<p align="center"><img src="images/heateqn_eq3.svg?invert_in_darkmode" align="middle" width="276pt" height="18.3pt"/></p>
+<p align="center"><img src="images/heateqn_eq3.svg" align="middle" width="276pt" height="18.3pt"/></p>
 
 There are a solver for the 2D equation implemented with Fortran
 (including some C for printing out the images). You can compile the
