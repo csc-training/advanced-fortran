@@ -3,5 +3,4 @@
 Write map function that takes a pointer to function `f` that maps
 integers to integers, and integer array A=[x<sub>1</sub>,
 x<sub>2</sub>, ...] as arguments and returns allocated array
-containing [f(x<sub>1</sub>), f(x<sub>2</sub>), ...]. Skeleton files
-for this exercise are provided in the exercise folder.
+containing [f(x<sub>1</sub>), f(x<sub>2</sub>), ...].

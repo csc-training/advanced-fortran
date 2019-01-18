@@ -23,8 +23,9 @@ contains
 
   subroutine print_person(person)
     type(person_t), intent(in) :: person
-    write (*,'(A,A,I3,A,I3,A,L)') person % name,',', person % age / 12, ' years and', &
-         mod(person % age, 12), ' months.', person%flag
+    write (*,'(A,A,I0,A,I0,A,L)') person % name,', ', &
+         & person % age / 12, ' years and ', &
+         & mod(person % age, 12), ' months. Flag value ', person%flag
   end subroutine print_person
 
   ! function init_person_t(name, years, months) result(new_person)

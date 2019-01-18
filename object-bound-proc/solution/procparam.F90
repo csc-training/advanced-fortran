@@ -1,5 +1,7 @@
 module points
 
+  ! This interface should match with add_param and sub_param
+  ! procedures
   interface
      function intfun(x, param) result(y) ! write contents
        integer, intent(in) :: x, param
@@ -38,7 +40,8 @@ program procpoint
   pptr(4:6) = [ (ft(sub_param, n), n=1,3) ]
 
   do n =1, 6
-     print *, 'map(pptr(n), [1,2,3,4]) =', map(pptr(n), [1,2,3,4]), ', n = ', n
+     write(*,'(A,4I3,A,I2)') 'map(pptr(n), [1,2,3,4]) =', &
+          & map(pptr(n), [1,2,3,4]), ', n = ', n
   end do
 
 contains

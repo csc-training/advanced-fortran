@@ -18,7 +18,7 @@ contains
 
   subroutine printme(data)
     class(data_t) :: data
-    print *, data % x, data % y, data % val
+    print '("  x: ", I0, ", y: ", I0, ", val: ", I0)', data % x, data % y, data % val
   end subroutine printme
 
   function initdata(x,y) result(obj)
@@ -44,20 +44,21 @@ program memoprog
   type(data_t) :: foo
   integer :: val
 
-  print *, 'init'
+  print *, 'Init'
   foo = data_t(1, 1)
   call foo % printme()
+  print *, 'Call calculate'
   val = foo % calculate()
-  print *, 'value = ', val
+  call foo % printme()
 
-  print *, 'calling calculate again'
+  print *, 'Calling calculate again'
   val = foo % calculate()
 
-  print *, 'reinit'
+  print *, 'Reinit'
   foo = data_t(2,1)
   call foo % printme()
   val = foo % calculate()
-  print *, 'calculate again, value = ', val
+  print '(A,I0)', ' Calculated again, value = ', val
   call foo % printme()
 
 end program memoprog

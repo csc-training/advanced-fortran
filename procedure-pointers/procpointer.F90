@@ -29,10 +29,12 @@ program procpoint
 
   pptr => add_one
   y = map(pptr, [1,2,3,4])
-  print *, 'map(add_one, [1,2,3,4]) =', y
+  write(unit=*,fmt='(A,*(I0,:,","))',advance='no') 'map(add_one, [1,2,3,4]) = [', y
+  write(*,'(A)') ']'
   pptr => add_two
   y = map(pptr, [1,2,3,4])
-  print *, 'map(add_two, [1,2,3,4]) =', y
+  write(unit=*,fmt='(A,*(I0,:,","))',advance='no') 'map(add_two, [1,2,3,4]) = [', y
+  write(*,'(A)') ']'
 
 contains
 

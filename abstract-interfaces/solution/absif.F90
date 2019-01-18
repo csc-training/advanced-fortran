@@ -43,10 +43,10 @@ program absif
   v3 = vecfun(vecprod,v1,v2)
   print '(*(F8.3))',v3 % data
   print *,'vecdotprod'
-  print *,vecdotprod(v1,v2)
+  print '(F8.3)',vecdotprod(v1,v2)
   ! Same computation with abstract interface
   print *,'scalfun(vecdotprod)'
-  print *,scalfun(vecdotprod,v1,v2)
+  print '(F8.3)',scalfun(vecdotprod,v1,v2)
 
 contains
 
